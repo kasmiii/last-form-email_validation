@@ -1,17 +1,29 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Favorite food</mat-label>
-    <input matInput placeholder="Ex. Pizza" value="Sushi" />
-  </mat-form-field>
+<div class="container" style="text-align: center">
+  <form class="example-form" [formGroup]="emailForm" (ngSubmit)="send()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Object</mat-label>
+      <input matInput placeholder="Ex. Pizza" formControlName="objectControl" />
+    </mat-form-field>
 
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Leave a comment</mat-label>
-    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-  </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Leave a comment</mat-label>
+      <textarea
+        matInput
+        formControlName="commentControl"
+        placeholder="Ex. It makes me feel..."
+      ></textarea>
+    </mat-form-field>
+  </form>
 
-  <mat-chip-list></mat-chip-list
-  ><!--ca fonctionne-->
-</form>
+  <button
+    type="submit"
+    color="primary"
+    mat-raised-button
+    [disabled]="emailForm.invalid"
+  >
+    send
+  </button>
+</div>
 
 <!-- Copyright 2023 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that

@@ -35,6 +35,10 @@ export class InputOverviewExample implements OnInit {
       commentControl: ['', [Validators.required]],
     });
   }
+
+  send(){
+    
+  }
 }
 
 /**  Copyright 2023 Google LLC. All Rights Reserved.
